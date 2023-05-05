@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+		<title>Frontend Mentor | Age calculator app</title>
+		<link rel="stylesheet" href="./assets/css/main.css" />
+		<script src="./assets/js/tailwind.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.4/dayjs.min.js"
+			integrity="sha512-XZSHSEFj4QeE0G4pwy4tToyAhF2VXoEcF9CP0t1PSZMP2XHhEEB9PjM9knsdzcEKbi6GRMazdt8tJadz0JTKIQ=="
+			crossorigin="anonymous"
+		></script>
+		<script>
+			tailwind.config = {
+				theme: {
+					extend: {
+						screens: {
+							xs: { max: '375px' },
+						},
+					},
+				},
+			};
+		</script>
+		<script src="./assets/js/main.js"></script>
+	</head>
+	<body>
+		<div class="flex flex-col my-10 containerForm p-5 xs:p-2">
+			<form class="flex flex-col">
+				<div class="flex flex-row p-5">
+					<div class="flex flex-col mr-10 xs:mr-5">
+						<label for="day">DAY</label>
+						<input id="day" name="day" type="text" class="input-style" placeholder="DD" onclick="checkErrorStyle(this)" />
+						<label id="text-error" for="day"></label>
+					</div>
+					<div class="flex flex-col mr-10 xs:mr-5">
+						<label for="month">MONTH</label>
+						<input id="month" name="month" type="text" class="input-style" placeholder="MM" onclick="checkErrorStyle(this)" />
+						<label id="text-error" for="month"></label>
+					</div>
+					<div class="flex flex-col">
+						<label for="year">YEAR</label>
+						<input id="year" name="year" type="text" class="input-style" placeholder="YYYY" onclick="checkErrorStyle(this)" />
+						<label id="text-error" for="year"></label>
+					</div>
+				</div>
+				<div id="separetor" class="flex flex-row w-full -mt-5 items-center xs:h-28">
+					<hr class="w-10/12 ml-5 xs:z-0" />
+					<button type="button" class="boton" onclick="getDate()">
+						<img src="./assets/images/icon-arrow.svg" class="xs:w-5/12" />
+					</button>
+				</div>
+			</form>
+			<div class="flex flex-col w-full h-fit results -mt-5">
+				<p><label id="yearResult">--</label> years</p>
+				<p><label id="monthResult">--</label> months</p>
+				<p><label id="dayResult">--</label> days</p>
+			</div>
+		</div>
+
+		<div class="attribution">
+			Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by
+			<a href="https://github.com/LuisEduardoZV/age-calculator">Luis Eduardo Zúñiga Vera</a>.
+		</div>
+	</body>
+</html>
+<!--
+
+echo "# age-calculator" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/LuisEduardoZV/age-calculator.git
+git push -u origin main
+
+
+-->
